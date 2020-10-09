@@ -38,6 +38,23 @@ There are 2 ways of using this repo:
 
 ### (Recommended) With `home-manager`
 
+Add the package to your home manager configuration (by running `home-manager edit` then `home-manager switch`)
+
+```nix
+# home.nix
+let
+  kaiosNixEnv = pkgs.callPackage ~/nix-kaiosenv {};
+in
+{
+  home.packages = [
+    # ...
+    kaiosNixEnv.package
+  ];
+  home.file = {
+    # ...
+  } // kaiosNixEnv.home-file;
+}
+```
 
 ### With `nix-shell`
 
