@@ -76,3 +76,7 @@ $ firefox --profile ./profile
 ## Relevant links
 
 - https://paul.kinlan.me/debugging-web-pages-on-the-nokia-8110-with-kaios/
+- https://cmacr.ae/post/2020-05-09-managing-firefox-on-macos-with-nix/
+- https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix
+- https://github.com/nix-community/nur-combined/blob/master/repos/rycee/pkgs/firefox-addons/default.nix
+ 
