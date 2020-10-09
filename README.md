@@ -63,13 +63,8 @@ To have a more seamless experience, consider using `direnv` to automatically loa
 ```
 $ nix-shell
 
-# create a symlink to the WebIDE .xpi to the current directory
-$ setup
-
-# Start firefox with custom profile
-$ firefox --profile ./profile 
-
-# Start WebIDE (Shift+F8)
+# If running on macOS, you can use this to start firefox
+$ firefox
 ```
 
 ## TODO
@@ -83,7 +78,7 @@ $ firefox --profile ./profile
 ### macOS specific
 
 - [x] Leagacy Firefox derivation
-- [ ] Usage with `home-manager`
+- [x] Usage with `home-manager`
 - [ ] Usage with `nix-shell`
 
 ### NixOS specific
