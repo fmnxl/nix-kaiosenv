@@ -60,6 +60,8 @@ $ firefox --profile ./profile
 - [x] Firefox derivation with WebIDE extension pre-installed
 - [x] Ship adbhelper extension out of the box
 - [x] Installs `adb` through android platform tools
+- [ ] Upgrade to Firefox v59
+    - [ ] Use deterministic profiles to inject prefs.js
 
 ### macOS specific
 
@@ -70,7 +72,6 @@ $ firefox --profile ./profile
 ### NixOS specific
 
 - [ ] `adb` and `udev` setup
-
 
 ## Relevant links
 
