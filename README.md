@@ -6,8 +6,9 @@ Nix-based KaiOS Dev Environment
 The official KaiOS [documentation](https://developer.kaiostech.com/getting-started/env-setup/os-env-setup)
 for setting up the development environment takes a few steps:
 - Installing a legacy version of Firefox (for its WebIDE)
-- Installing `adb-platform-tools` through `brew`
+- Installing `adb-platform-tools`
 - Downloading and installing the `adbhelper` extension
+- Allow legacy and unsigned extension on `about:config`
 - (Linux) setting up `udev` rules
 
 I also encountered a few issues when setting up WebIDE on Linux:
@@ -19,22 +20,25 @@ reproducibly.
 
 ## How it works
 
+### Nix
+
+With Nix we pin the required remote packages and expose them through `home-manager` or `nix-shell`.
+
 ### `adbhelper`
 
 To install this extension, we can use Firefox's deprecated [Extension Sideloading](https://extensionworkshop.com/documentation/publish/distribute-sideloading/).
 This will automatically add the extension to our Firefox installation. However, the user would still have to manually enable the extension.
 
 ## Requirements
+- macOS or Linux
 - Nix > 2.0
 - Nixpkgs v19.09
-
-### macOS
-- (optional but recommended) [`home-manager`](https://github.com/rycee/home-manager/)
+- (recommended) [`home-manager`](https://github.com/rycee/home-manager/)
 
 
 ## Usage
 
-There are 2 ways of using this repo:
+There are 2 ways:
 
 ### (Recommended) With `home-manager`
 
@@ -72,8 +76,9 @@ $ firefox
 - [x] Firefox derivation with WebIDE extension pre-installed
 - [x] Ship adbhelper extension out of the box
 - [x] Installs `adb` through android platform tools
-- [ ] Upgrade to Firefox v59
+- [x] Upgrade to Firefox v59
     - [ ] Use deterministic profiles to inject prefs.js
+    - [ ] Set `xpinstall.signatures.required` and `extensions.legacy.enabled`
 
 ### macOS specific
 
