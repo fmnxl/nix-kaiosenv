@@ -1,11 +1,11 @@
-{ buildEnv, callPackage, androidenv }:
+{ pkgs }:
 {
-  package = buildEnv {
+  package = pkgs.buildEnv {
     name = "kaios-nix-env";
     paths = [
-      (callPackage ./firefox.nix {})
-      androidenv.androidPkgs_9_0.platform-tools
+      (pkgs.callPackage ./firefox.nix {})
+      pkgs.androidenv.androidPkgs_9_0.platform-tools
     ];
   };
-  home-file = import ./home-extensions.nix {};
+  home-file = import ./home-extensions.nix { inherit pkgs; };
 }
